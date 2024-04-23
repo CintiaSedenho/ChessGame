@@ -1,0 +1,42 @@
+import pygame
+
+# Init pygame
+pygame.init()
+
+# Define colours
+light_gray = (211, 211, 211)
+dark_gray = (128, 128, 128)
+
+# Define size screen
+width = 1000
+height = 1000
+
+# Create screen
+screen = pygame.display.set_mode((widht, height))
+
+#update frame per second
+fps = 30
+
+#count time
+timer = pygame.time.Clock()
+
+# Define title
+pygame.display.set_caption("Chess Game")
+
+# Draw board
+for i in range(8):
+    for j in range(8):
+        color = light_gray if (i + j) % 2 == 0 else dark_gray
+        pygame.draw.rect(sreen, color, (i * 64, j * 64, 100, 100))
+	#pygame.draw.rect(local, color, (begin, end, height, width))
+
+# Update screen, without this command the game runs once and stops
+pygame.display.update()
+
+# Keeps the screen open until the user closes it
+
+While True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+
